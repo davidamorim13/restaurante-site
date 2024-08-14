@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 
 .App {
   text-align: center;
@@ -6,11 +11,17 @@
 .header{
   background-color: #c72828;
   width: 100%;
-  height: 200px;
+  height: 250px;
   display: flex;
   justify-content: space-between;
-  padding: 5px 32px;
-  
+}
+
+.header .header_container{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 32px;
 }
 
 .header > div{
@@ -30,7 +41,6 @@ height: 100%;
   justify-content: space-between;
   border: 1px ;
   width: 230px;
- 
 }
 
 .header .logo h1, .header .logo p{
@@ -92,6 +102,11 @@ height: 100%;
   border-top-right-radius: 18px;
 }
 
+.card .image img{
+width: 80%;
+margin-top: 34px;
+}
+
 .card .content{
   padding: 12px 32px;
 }
@@ -124,7 +139,7 @@ height: 100%;
 }
 
 .category_list{
-  width: 1350px;
+  width:70%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -132,3 +147,92 @@ height: 100%;
   gap: 40px;
   margin-top: -50px;
 }
+
+.modal_orvelay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal_container{
+  border: 1px solid #ffffff;
+  width: 70%;
+  max-width: 800px;
+  height: 580px;
+  border-radius: 12px;
+  background-color: #eee;
+ display: flex;
+ flex-direction: column;
+}
+
+.modal_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15;
+}
+
+.modal_content{
+  flex: 1;
+}
+
+.button_group{
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+}
+
+
+.form_input{
+  padding: 12px 24px;
+  border: 1px solid #333;
+  color: #000;
+  border-radius: 8px;
+  background-color: #eee;
+}
+
+.form_select{
+  padding: 12px 24px;
+  border: 1px solid #333;
+  color: #000;
+  border-radius: 8px;
+  background-color: #eee;
+}
+
+
+.button_primary {
+  background-color: #39b100;
+  padding: 12px 24px;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  flex: 1;
+}
+
+
+.butto_reset {
+  background-color: #aaa;
+  padding: 12px 24px;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  flex: 1;
+}
+

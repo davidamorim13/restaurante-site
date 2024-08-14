@@ -3,7 +3,7 @@ export default function Card(){
     return(
         <section className="card">
             <div className="image">
-
+                <img src="./image/ao molho.png" alt="foto da categoria"/>
             </div>
 
             <div className="content">
