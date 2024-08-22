@@ -2,7 +2,9 @@ import api from "./http"
 
 
 type CategoryCreate = {
-    name: string
+    id: string;
+    name: string;
+    description: string;
     active: boolean
 }
 

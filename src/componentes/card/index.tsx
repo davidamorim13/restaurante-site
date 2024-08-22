@@ -1,5 +1,12 @@
 
-export default function Card(){
+export type CardProps = {
+    name: string;
+    description: string;
+    active: boolean;
+}
+
+
+export default function Card({ name, description, active }: CardProps){
     return(
         <section className="card">
             <div className="image">
@@ -7,8 +14,9 @@ export default function Card(){
             </div>
 
             <div className="content">
-                <h2>Massas</h2>
-                <p>Macarrão com vegetais de primeira linha e camarão dos 7 meses.</p>
+
+                <h2>{name}</h2>
+                <p>{description}</p>
             </div>
 
             <div className="footer">
@@ -24,7 +32,7 @@ export default function Card(){
 
                 <div>
                     <p>Disponivel</p>
-                    <input type="checkbox"></input>
+                    <input type="checkbox" checked={active}/>
                 </div>
             </div>
 

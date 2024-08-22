@@ -1,40 +1,33 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import logo from './logo.svg';
+import {
+  createBrowserRouter,
+  RouterProvider
+} from "react-router-dom";
 import './App.css';
-import Header from './componentes/header'
-import Card from './componentes/card';
-import Modal from './componentes/modal';
-import api from './api/http';
+import { CategoriesScreen } from './componentes/screen/categories';
+import { ProductsScreen } from './componentes/screen/products';
+import './index.css';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <p>ola</p>
+   },
+  {
+    path: "/products",
+    element: <ProductsScreen/>
+   },
+  {
+    path: "/categories",
+    element: <CategoriesScreen/>,
+  },
+]);
+
 
 function App() {
-  const [page, setPage] = useState(1);
-
-  const chamaApi = useCallback ( async () => {
-    try {
-      await api.get(`/categoris`, { params: { page } })
-    } catch (err: any) {
-      console.log(err)
-    }
-  }, [page])
-
-  useEffect(() => {
-    chamaApi();
-  }, [chamaApi, page])
 
   return (
     <div className="App">
-      <Header title='Categorias' />
-      <div className='category_list'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-
-        <button onClick={() => setPage(page +1)}>
-          Proxima pagina
-        </button>
-      </div>
+      <RouterProvider router={router}/>
     </div>
   );
 }
