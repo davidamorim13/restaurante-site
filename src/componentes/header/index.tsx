@@ -28,6 +28,11 @@ export default function Header({ title, openModal }: HeaderProps) {
 
           <div className="menu">
             <ul>
+               <li>
+
+                <a href="/">Home</a>
+
+              </li>
 
               <li>
 

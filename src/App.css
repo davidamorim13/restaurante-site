@@ -273,3 +273,20 @@ margin-top: 34px;
 .menu ul li a:hover{
   background-color: rgba(255,255,255,0.6);
 }
+
+.home{
+  display: flex;
+  justify-content: space-between;
+}
+
+.home h3{
+border: 1px solid #39b100;
+}
+
+.home p{
+
+}
+
+.home_image{
+ 
+}

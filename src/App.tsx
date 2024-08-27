@@ -6,11 +6,12 @@ import './App.css';
 import { CategoriesScreen } from './componentes/screen/categories';
 import { ProductsScreen } from './componentes/screen/products';
 import './index.css';
+import { HomeScreen } from "./componentes/screen/home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <p>ola</p>
+    element: <HomeScreen/>
    },
   {
     path: "/products",
