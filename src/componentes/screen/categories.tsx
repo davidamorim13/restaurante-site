@@ -14,7 +14,7 @@ export function CategoriesScreen() {
   const [page, setPage] = useState(1);
   const [categories, setCategories] = useState([])
 
-  const chamaApi = useCallback ( async () => {
+  const chamaApi = useCallback(async () => {
     try {
 
       const { data } = await api.get(`/categories`, { params: { page } })
@@ -59,14 +59,18 @@ export function CategoriesScreen() {
   return (
     <>
       <Header title='Categorias' openModal={open} />
-      
+
       <div className='category_list'>
 
-        {categories.map((item: CardProps) => <Card name={item.name} description={item.description} active={item.active} />)}
+        <div className='category_content'>
+          {categories.map((item: CardProps) => <Card name={item.name} description={item.description} active={item.active} />)}
 
-        <button onClick={() => setPage(page + 1)}>
-          Proxima pagina
-        </button>
+          {/* <button onClick={() => setPage(page + 1)}>
+          Proxima pagina 
+          </button> */}
+        </div>
+
+
       </div>
 
       <Modal title='Cadastrar novo produto' visible={visible} close={close}>

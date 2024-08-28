@@ -141,11 +141,19 @@ margin-top: 34px;
 .category_list{
   width:70%;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
   margin-top: -50px;
+  /*overflow-y:scroll;*/
+}
+
+.category_list .category_content{
+  margin: auto;
+  text-align: center;
+  width: 85%;
+}
+
+.category_list .category_content .card{
+  float: left;
+  margin: 5px;
 }
 
 .modal_orvelay{
@@ -274,19 +282,30 @@ margin-top: 34px;
   background-color: rgba(255,255,255,0.6);
 }
 
-.home{
+
+.title{
+border: 1px solid #39b100;
+margin-top: -40px;
+height: 100%;
+color: #ffffff;
+font-family: 'Times New Roman';
+}
+
+.home-descricao{
   display: flex;
   justify-content: space-between;
+  
 }
 
-.home h3{
-border: 1px solid #39b100;
+.home-descricao p{
+  font-size: 30px;
+  font-family: 'Times New Roman';
+  text-align: justify;
+  border: solid 1px;
 }
 
-.home p{
-
-}
-
-.home_image{
- 
+.text-ellipse{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

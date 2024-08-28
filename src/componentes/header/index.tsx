@@ -2,10 +2,11 @@ import { FaRegSquarePlus } from "react-icons/fa6";
 
 type HeaderProps = {
   title: string;
-  openModal?: () => void
+  openModal?: () => void;
+  buttonEnable?: boolean;
 }
 
-export default function Header({ title, openModal }: HeaderProps) {
+export default function Header({ title, openModal, buttonEnable = true }: HeaderProps) {
 
   const handlerOpenModal = () => {
     if (openModal) {
@@ -28,7 +29,7 @@ export default function Header({ title, openModal }: HeaderProps) {
 
           <div className="menu">
             <ul>
-               <li>
+              <li>
 
                 <a href="/">Home</a>
 
@@ -47,14 +48,18 @@ export default function Header({ title, openModal }: HeaderProps) {
 
           </div>
         </div>
-        <div className='button'>
-          <div onClick={() => handlerOpenModal()} style={{ cursor: 'pointer' }}>
-            <div className='button_body_new'>
-              Criar {title}
+        {
+          buttonEnable && (
+            <div className='button'>
+              <div onClick={() => handlerOpenModal()} style={{ cursor: 'pointer' }}>
+                <div className='button_body_new'>
+                  Criar {title}
+                </div>
+                <div className='button_body_icon'> <FaRegSquarePlus /> </div>
+              </div>
             </div>
-            <div className='button_body_icon'> <FaRegSquarePlus /> </div>
-          </div>
-        </div>
+          )
+        }
       </div>
     </header >
   )

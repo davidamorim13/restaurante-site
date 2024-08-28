@@ -15,8 +15,8 @@ export default function Card({ name, description, active }: CardProps){
 
             <div className="content">
 
-                <h2>{name}</h2>
-                <p>{description}</p>
+                <h2 className="text-ellipse">{name}</h2>
+                <p className="text-ellipse">{description}</p>
             </div>
 
             <div className="footer">

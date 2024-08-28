@@ -13,7 +13,7 @@ export function ProductsScreen() {
   const [page, setPage] = useState(1);
   const [products, setProducts] = useState([])
 
-  const chamaApi = useCallback ( async () => {
+  const chamaApi = useCallback(async () => {
     try {
 
       const { data } = await api.get(`/products`, { params: { page } })
@@ -46,7 +46,7 @@ export function ProductsScreen() {
         id: data.id,
         name: data.name,
         price: data.number,
-        categoriid:  data.categoriid,
+        categoriid: data.categoriid,
         active: Boolean(data.active)
       });
 
@@ -59,14 +59,17 @@ export function ProductsScreen() {
   return (
     <>
       <Header title='Produtos' openModal={open} />
-      
+
       <div className='category_list'>
 
-        {products.map((item: CardProps) => <Card name={item.name} description={item.description} active={item.active} />)}
+        <div className="category_content">
+          {products.map((item: CardProps) => <Card name={item.name} description={item.description} active={item.active} />)}
 
-        <button onClick={() => setPage(page + 1)}>
-          Proxima pagina
-        </button>
+          {/* <button onClick={() => setPage(page + 1)}> 
+          Proxima pagina 
+          </button> */}
+        </div>
+
       </div>
 
       <Modal title='Cadastrar novo produto' visible={visible} close={close}>
