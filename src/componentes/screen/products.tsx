@@ -45,7 +45,7 @@ export function ProductsScreen() {
       await Products.create({
         id: data.id,
         name: data.name,
-        price: data.number,
+        price: data.price,
         categoriid: data.categoriid,
         active: Boolean(data.active)
       });
@@ -83,13 +83,19 @@ export function ProductsScreen() {
             <text> Nome </text>
             <input type="text" {...register("name")} className="form_input" />
 
-            <text> Descrição </text>
-            <input type="text" {...register("description")} className="form_input" />
+            <text> Preço </text>
+            <input type="text" {...register("price")} className="form_input" />
 
             <text> Ativo </text>
             <select {...register("active")} className="form_select" >
               <option value="1">sim</option>
               <option value="0">Não</option>
+            </select>
+
+            <text> Categoria </text>
+            <select {...register("categoriid")} className="form_select" >
+              <option value="1">Massas Secas</option>
+              <option value="2">Massa de sêmola</option>
             </select>
 
             <div className="button_group">
